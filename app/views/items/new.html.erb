@@ -1,0 +1,13 @@
+<div class= "container">
+  <h1 class="text-center mb-4"> 
+  <strong><em>New Item</em></strong></h1>
+
+
+  <%= render "form", item: @item %>
+
+ 
+
+  <div>
+     <%= link_to "Back to items", items_path ,class: "btn btn-secondary mt-2"%>
+   </div>
+</div>

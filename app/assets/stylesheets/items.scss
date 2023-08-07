@@ -1,0 +1,44 @@
+.menu::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("194.jpg");
+    opacity: 0.1;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+.menu{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.container {
+
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+.menu .container .category{
+    display: flex;
+    justify-content: space-between;
+}
+ 
+.card {
+    margin-bottom: 20px;
+}
+.card:hover{
+        box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+}
+.card-body{
+padding: 30px;
+    background: #f9f9ff;
+}

@@ -1,0 +1,42 @@
+<section id = "session">
+<div class="container d-flex justify-content-center align-items-center">
+<div class="login-form ">
+   <h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+   
+  <div class="form-group">
+   <br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name",class: "form-control",placeholder:"First name" %>
+  </div>
+
+  <div class="form-group">
+   <br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name",class: "form-control",placeholder:"Last name" %>
+  </div>
+
+  <div class="form-group">
+   <br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control",placeholder:"Email" %>
+  </div>
+  <br />
+  <div class="form-group">
+    
+    <%= f.password_field :password, autocomplete: "new-password",class: "form-control",placeholder:"password (6 characters minimum)" %>
+  </div>
+
+  <div class="form-group">
+    <br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-control",placeholder:"confirm password" %>
+  </div>
+
+   <div class="form-group">
+      <%= f.submit "sign up", class: " w-100 btn btn-lg btn btn-primary mt-3" %>
+    </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+</div>
+</section>

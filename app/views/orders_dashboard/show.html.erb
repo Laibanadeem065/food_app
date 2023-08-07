@@ -1,0 +1,28 @@
+
+<div class="container">
+  <h1 class="heading">Order Details</h1>
+
+  <div class="card">
+    <div class="card-body">
+      <h3><p>Created_at :<%= @order.created_at %></h3></p>
+      <p> Full name :<%= @order.user.first_name + ' ' + @order.user.last_name %></p>
+      <p> Email :<%= @order.user.email %></p>
+
+      <% @order.order_items.each do |order_item| %>
+        <div class="card mb-3">
+          <div class="card-body">
+
+            <h4><%= link_to order_item.item.title, item_path(order_item.item), style: "color: black;" %></h4>
+            <p>Quantity: <%= order_item.quantity %></p>
+            <p>Price: <%= order_item.item.price %></p>
+            <p>Subtotal: <%= order_item.subtotal %></p>
+          </div>
+        </div>
+      <% end %>
+
+      <p>Total: <%= @order.total %></p>
+      <p>Status: <%= @order.status %></p>
+    </div>
+  </div>
+</div>
+

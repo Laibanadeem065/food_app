@@ -1,0 +1,28 @@
+
+<div class="container " style="min-height: calc(100vh - 10px);">
+  <h1 class="heading">Order Dashboard</h1>
+
+  <% @orders.each do |order| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h3><%= order.created_at %></h3>
+           <% if order.user %>
+           <p><%= order.user.first_name.to_s + ' ' + order.user.last_name.to_s %></p>
+           <% else %>
+            <p>User not available</p>
+           <% end %>
+        <p>Total: <%= order.total %></p>
+        <p>Status: <%= order.status %></p>
+        <%= link_to "View Order Details", orders_dashboard_path(order), class: "btn btn-primary" %>
+
+        <% if order.ordered? %>
+          <%= button_to "Cancel", cancel_order_dashboard_path(order), method: :post, class: "btn btn-danger" %>
+        <% elsif order.paid? %>
+          <%= button_to "Mark as Completed", mark_completed_order_dashboard_path(order), method: :post, class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+

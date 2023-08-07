@@ -1,0 +1,23 @@
+
+ <section class = "home" id="home">
+  
+     <div class="row">
+          <div class="col-lg-6" id = "column1">
+              <h1>Discover the <span class="prime-color">flavors</span><br>
+             
+              </h1>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+              <%= link_to "Order now",items_path, class: "btn btn-outline-warning px-3 py-2"%>
+          </div>
+
+          <div class="col-lg-4" >
+            <%= image_tag('burger3.png', class: 'img-fluid', id: "image") %>
+          </div>
+      </div>
+</section>
+<%= render "home/speciality"%>
+<%= render "home/aboutus"%>
+
+
+
+

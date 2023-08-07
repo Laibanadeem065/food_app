@@ -1,0 +1,20 @@
+
+.gallery{
+    background-color: antiquewhite;
+}
+.gallery-content{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+.gallery-item{
+    scroll-snap-align: center;
+    min-width: 75%;
+}
+.gallery-image{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}

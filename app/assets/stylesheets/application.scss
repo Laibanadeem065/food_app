@@ -1,0 +1,48 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "font-awesome";
+ @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+ @import "bootstrap";
+ @import "home";
+ @import "items";
+ @import "orders";
+ @import "new_session";
+ @import "speciality";
+ @import "gallery";
+
+ *{
+    font-family: 'Nunito',sans-serif;
+ }
+section{
+   padding: 2rem 9%;
+   
+}
+.heading{
+   text-align: center;
+   font-size: 4rem;
+   color:#333;
+   padding:1rem;
+   padding-top: 5rem;
+}
+.nav-link:hover{
+   color: #ffb606;
+}
+.about-description{
+   padding-top: 4rem;
+
+}
+
+

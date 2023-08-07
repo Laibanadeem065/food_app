@@ -1,0 +1,35 @@
+<div class="container" style="min-height: calc(100vh - 10px);"> 
+  <h1 class="heading">
+    <strong><em><%= @item.title %></em></strong>
+  </h1>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= image_tag(@item.photo, class: "img-fluid rounded") %>
+    </div>
+    <div class="col-lg-6">
+      <p class="lead"><%= @item.description %></p>
+      <p class="text-primary h3">
+        <strong>Price:</strong> <%= @item.price %>
+      </p>
+      <% if @item.retired %>
+        <p class="text-danger h4">
+          <strong>Status:</strong> Out of Stock
+        </p>
+      <% end %>
+      <% if policy(Item).update? %>
+        <%= link_to "Edit this item", edit_item_path(@item), class: "btn btn-secondary mb-2" %> |
+        <%= button_to "Destroy this item", @item, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger mb-2" %>
+      <% end %>
+      <% unless current_user&.admin? %>
+        <%= link_to "Add to Cart", cart_add_item_path(item_id: @item.id), method: :post, class: "btn btn-primary" %>
+      <% end %>
+      <%= link_to "Back to items", items_path, class: "btn btn-primary me-2" %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

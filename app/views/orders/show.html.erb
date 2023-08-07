@@ -1,0 +1,14 @@
+<div class= "container" style="min-height: calc(100vh - 10px);">
+<h1 class="heading">Order Details</h1>
+<h3><%= @order.created_at %></h3>
+<p><%= @order.user.first_name + ' ' + @order.user.last_name %></p>
+<p><%= @order.user.email %></p>
+<% @order.order_items.each do |order_item| %>
+  <h4><%= order_item.item.title %></h4>
+  <p>Quantity: <%= order_item.quantity %></p>
+  <p>Price: <%= order_item.item.price %></p>
+  <p>Subtotal: <%= order_item.subtotal %></p>
+<% end %>
+<p>Total: <%= @order.total %></p>
+<p>Status: <%= @order.status %></p>
+</div>

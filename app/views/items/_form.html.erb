@@ -1,0 +1,38 @@
+<%= form_with(model: @item, url: @item.persisted? ? item_path(@item) : items_path, class: "form") do |form| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <ul>
+        <% @item.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class ="form-group">
+    <strong> Select Category:</strong><%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
+  </div>
+
+ 
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :price %>
+    <%= form.number_field :price, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :photo %>
+    <%= form.file_field :photo, class: "form-control" %>
+  </div>
+    <div class="form-group mt-2">
+    <%= form.check_box :retired %>
+    <%= form.label :retired, "Retire Item" %>
+  </div> 
+  <%= form.submit "Save", class: "btn btn-success mt-2" %>
+<% end %>

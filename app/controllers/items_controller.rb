@@ -5,11 +5,12 @@ class ItemsController < ApplicationController
   
     def index
       if params[:query].present?
-        @items = Item.where("title LIKE ?", "%#{params[:query]}%")
+        query = params[:query].downcase # Convert the query to lowercase
+        @items = Item.where("LOWER(title) LIKE ?", "%#{query}%")
       else
-      @items = policy_scope(Item)
+        @items = policy_scope(Item)
       end
-    end
+    end    
   
     def show
     end

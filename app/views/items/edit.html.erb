@@ -1,13 +1,13 @@
-<div class= "container">
-  <h1 class="text-center mb-4"> 
-  <strong><em>New Item</em></strong></h1>
+<div class= "container" style="min-height: calc(100vh - 10px);" >
+  <h1 class="text-center mt-5"> 
+  <strong><em>Edit Item</em></strong></h1>
 
-<%= render "form", item: @item %>
+  <%= render "form", item: @item %>
 
-<br>
+ <br>
 
-<div>
-  <%= link_to "Show this item", @item, class: "btn btn-secondary"%> |
-  <%= link_to "Back to items", items_path, class: "btn btn-primary" %>
-</div>
+    <div>
+     <%= link_to "Show this item", @item, class: "btn btn-secondary"%> |
+     <%= link_to "Back to items", items_path, class: "btn btn-primary" %>
+   </div>
 </div>

@@ -27,5 +27,6 @@ class Order < ApplicationRecord
 
   def recalculate_total
     self.total = order_items.sum(&:subtotal)
+    save
   end
 end

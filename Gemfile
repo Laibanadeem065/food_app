@@ -78,3 +78,11 @@ gem "devise", "~> 4.9"
 gem "pundit", "~> 2.3"
 gem "font-awesome-sass", "~> 6.4.0"
 
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "redis", "~> 5.0"
+
+gem "sentry-ruby", "~> 5.10"
+
+gem "sentry-rails", "~> 5.10"

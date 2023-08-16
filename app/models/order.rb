@@ -26,6 +26,6 @@ class Order < ApplicationRecord
   before_destroy :recalculate_total
 
   def recalculate_total
-    update_column(:total, order_items.sum(&:subtotal))
+    self.total = order_items.sum(&:subtotal)
   end
 end

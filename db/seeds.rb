@@ -43,13 +43,14 @@ users = [
 
 User.create(users)
 
-
 #Create orders
-
 user = User.first
 order = Order.create(status: "completed", user_id: user.id)
 
-order_item = OrderItem.create(quantity: 3, item_id: Item.first.id, order_id: order.id)
+# Make sure Item.first is not nil before creating an OrderItem
+if Item.first
+  order_item = OrderItem.create(quantity: 3, item_id: Item.first.id, order_id: order.id)
+end
 
 user = User.first
 cart = user.create_cart
